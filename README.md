@@ -30,6 +30,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
+### Pinned dependency versions
+
+- `typescript` is held on the `5.x` line. TypeScript 7.0 was tested and is not usable yet:
+  `typescript-eslint` (bundled by `eslint-config-next` 16) aborts with
+  "typescript-eslint does not support TS 7.0", and TS 7 removed `target: ES5`, which
+  `tsconfig.json` relies on (`error TS5108`), so `tsc --noEmit`, `next build`'s type check,
+  and `eslint .` all fail. Revisit once `typescript-eslint` supports TS 7.
+- `@types/node` is held on the `22.x` line deliberately, to match the Node.js 22 runtime
+  declared in `.nvmrc` and `package.json` `engines`.
+
 ### Known residual `npm audit` advisories
 
 `npm audit` reports high-severity advisories that cannot currently be resolved in this
