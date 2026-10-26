@@ -6,6 +6,12 @@ Learn more: https://docs.amplify.aws/gen2/start/quickstart/
 
 ### Getting Started
 
+This project requires Node.js 22 (LTS) or later. Verify your version:
+
+```bash
+node --version
+```
+
 First, run the development server:
 
 ```bash
